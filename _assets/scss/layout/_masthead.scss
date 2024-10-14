@@ -1,7 +1,7 @@
 #masthead {
   width: 100%;
   padding: 0;
-  background-color: $masthead-bgcolor;
+  background-color: transparent;
 
   .inner {
     @include container();
@@ -23,9 +23,9 @@
     @include transition-default();
   	display: inline-block;
   	margin: 0;
-    width: 120px;
-    height: 120px;
-  	background: transparent url('img/awesome-logo.svg') 0 0 no-repeat;
+    width: 67px;
+    height: 90px;
+  	background: transparent url('img/ehc-logo.svg') 0 0 no-repeat;
   	position: relative;
   	z-index: 2;
 

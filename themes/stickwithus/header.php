@@ -72,12 +72,6 @@ endif; ?>
 					<div class="primary-menu">
 						<?php wp_nav_menu( array( 'theme_location' => 'Primary') ); ?>
 					</div>
-					<div class="secondary-menu">
-						<?php wp_nav_menu( array( 'theme_location' => 'Secondary') ); ?>
-						<?php /* <div>
-							<?php do_action('wpml_add_language_selector'); ?>
-						</div> */ ?>
-					</div>
 				</div>
 			</nav><!-- #site-navigation -->
 		</div>
