@@ -4,9 +4,8 @@
   background-color: transparent;
 
   .inner {
-    @include container();
     position: relative;
-    margin: 0.5em auto 0;
+    margin: 0.5em 5% 0;
 
     @include mappy-bp(screen-md) {
     	display: flex;
@@ -16,7 +15,9 @@
 
   .site-branding {
     display: flex;
-    margin: 0 0 0.5em
+    margin: 0 0 0.5em;
+    position: relative;
+    z-index: 300;
   }
 
   .site-title {
@@ -31,16 +32,16 @@
 
 
   	a {
- 	 	@include text-hide();
-		display: block;
-		width: 100%;
-		height: 100%;
-		text-decoration: none;
+   	 	@include text-hide();
+  		display: block;
+  		width: 100%;
+  		height: 100%;
+  		text-decoration: none;
 		      
-        span {
-          visibility: hidden;
-          display: none;
-        }
+      span {
+        visibility: hidden;
+        display: none;
+      }
   	}
   }
 

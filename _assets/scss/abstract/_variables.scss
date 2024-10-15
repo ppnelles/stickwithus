@@ -20,10 +20,11 @@ $breakpoints: (
 * Fonts Families
 */
 
-$f-regular: Georgia, Times, "Times New Roman", serif;
-$f-title: Helvetica, Arial, Verdana, sans-serif;
+$f-regular: 'Karla', Georgia, Times, "Times New Roman", serif;
+$f-title: 'SCHABO', Helvetica, Arial, Verdana, sans-serif;
 $f-quote: Georgia, Times, "Times New Roman", serif;
 $f-light: Georgia, Times, "Times New Roman", serif;
+
 
 /*
 * Base Colors
@@ -34,17 +35,18 @@ $green: #50d37d;
 $dark-green: #117e36;
 $orange: #fe8641;
 $yellow: #ffb516;
-$blue: #4285ff;
+$blue: #323f5a;
+$blue-light: #57a0cb;
 $black: #0a0908;
 $grey-light: #e1e1e1;
 
-$c-primary: $green;
-$c-secondary: $orange;
-$c-action: $red;
-$c-link: $blue;
-$c-link_hover: $orange;
+$c-primary: $blue-light;
+$c-secondary: $blue;
+$c-action: $blue-light;
+$c-link: $blue-light;
+$c-link_hover: $blue;
 
-$c-text: #404040;
+$c-text: #012029;
 $c-text_light: #b7b7b7;
 $c-text_dark: $black;
 $c-title: $black;
@@ -53,7 +55,7 @@ $c-border: $grey-light;
 
 $c-background_body: #ffffff;
 $c-background_light: #f1f1f1;
-$c-background_colored: #009ddf;
+$c-background_colored: #e6f1f7;
 $c-background_dark: #333333;
 
 $c-table-border: $grey-light;

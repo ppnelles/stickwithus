@@ -13,10 +13,24 @@
 	}
 
 	.nav-inner {
-		padding: 2em 0;
+		background-color: $blue-light;
+		height: 100vh;
+		width: 100%;
+		padding: 0;
 		text-align: center;
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 100;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 
 		@include mappy-bp(screen-md) {
+			background-color: transparent;
+			height: auto;
+			width: auto;
+			position: relative;
 			padding: 0;
 			text-align: left;
 			display: flex;
@@ -76,9 +90,40 @@
 		padding: 0 0.25em;
 		color: white;
 		text-decoration: none;
+		text-transform: uppercase;
+		font-size: 220%;
+		font-weight: 700;
+
+		@include mappy-bp(screen-md) {
+			font-size: 100%;
+			font-weight: 400;
+		}
 
 		&:hover {
-			color: $main-nav-link-hover-color;
+			color: $blue;
+
+			@include mappy-bp(screen-md) {
+				color: $blue-light;
+			}
+		}
+	}
+
+	.menu-button {
+		@include mappy-bp(screen-md) {
+			margin-left: 10px;	
+		}
+
+		a {
+			@include mappy-bp(screen-md) {
+				@include btn();	
+			}
+
+			&:hover {
+				@include mappy-bp(screen-md) {
+					background-color: #fff;	
+					color: $blue;
+				}
+			}
 		}
 	}
 
@@ -95,6 +140,7 @@
 
 .menu-toggle {
 	position: absolute;
+	z-index: 300;
 	top: 1.5em;
 	right: 2.5%;
 	display: inline-block;
@@ -116,6 +162,7 @@
 	}
 
 	.burger-line {
+		@include transition-default();
 		display: block;
 		width: 37px;
 		height: 3px;
@@ -151,7 +198,7 @@
 
 	&.toggled {
 		.nav-inner {
-			display: block;
+			display: flex;
 
 			@include mappy-bp(screen-md) {
 				display: flex;
@@ -160,26 +207,31 @@
 	}
 }
 
-.secondary-menu {
-	@include mappy-bp(screen-md) {
-	    display: flex;
-	    justify-content: flex-end; 
-	    align-items: center;
-	   // margin: 0.5em 0 1em;
+#masthead .main-navigation.toggled {
+
+	.burger-line {
+		background-color: #fff;
 	}
 
-	a {
-		@include mappy-bp(screen-md) {
-			font-size: 90%;
-			//text-transform: none;
-			//padding: 0;
-		}
-	}
+  .burger-line:nth-child(2) {
+    transform: rotate(45deg);
+  }
 
-	> * {
-		@include mappy-bp(screen-md) {
-			margin: 0 0.5em 0 0;
-		}
-	}
+  .burger-line:nth-child(3) {
+    transform: rotate(-45deg);
+    margin: -4px 0 0 0;
+  }
 
+  .burger-line:nth-child(1) {
+    opacity: 0;
+  }
+
+  .burger-line:nth-child(4) {
+  	opacity: 0;
+  }
+
+  .nav-inner {
+    right: 0;
+  }
+  
 }

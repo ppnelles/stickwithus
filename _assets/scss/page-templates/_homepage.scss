@@ -1,6 +1,36 @@
 .page-template-homepage {
 
-	section.intro {
+	section {
+		h2,
+		.title {
+			font-family: $f-title;
+			color: $blue;
+			text-transform: uppercase;
+			font-size: 350%;
+			line-height: 0.9;
+			margin: 0 0 0.25em;
+
+			@include mappy-bp(screen-md) {
+				font-size: 500%;	
+			}
+
+			@include mappy-bp(screen-lg) {
+				font-size: 550%;	
+			}
+
+			span {
+				@include mappy-bp(screen-sm) {
+					display: block;	
+				}
+			}
+		}
+
+		.cta {
+			margin: 2em 0 0;
+		}
+	}
+
+	section#stick {
 		position: relative;
 		width: 100%;
 		height: 85vh;
@@ -41,6 +71,293 @@
 				height: auto;
 			}
 		}
+
+		.accroche {
+			width: 150px;
+			height: 150px;
+			border-radius: 150px;
+			line-height: 150px;
+			background-color: $blue-light;
+			color: white;
+			text-transform: uppercase;
+			font-family: $f-title;
+			font-weight: 900;
+			font-size: 120%;
+			letter-spacing: 2px;
+			text-align: center;
+			position: absolute;
+			left: calc(50% - 75px);
+			bottom: -80px;
+			z-index: 2;
+			box-shadow: 0 5px 15px 12px rgba(0,0,0,.25);
+
+			@include mappy-bp(screen-lg) {
+				width: 190px;
+				height: 190px;
+				border-radius: 190px;
+				line-height: 190px;
+			}
+
+			&:after {
+				content: '';
+				width: 160px;
+				height: 160px;
+				border-radius: 160px;
+				background-color: transparent;
+				border: 5px solid $blue-light;
+				position: absolute;
+				top: -10px;
+				left: -10px;
+				z-index: 1;
+
+				@include mappy-bp(screen-lg) {
+					width: 200px;
+					height: 200px;
+					border-radius: 200px;
+				}
+			}
+
+			a {
+				display: block;
+				width: 100%;
+				height: 100%;
+				color: white;
+				text-decoration: none;
+				position: relative;
+				z-index: 2;
+				//font-size: 51px;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+
+				b,
+				span {
+					display: block;
+					line-height: 0.9;
+
+					// &:nth-of-type(2) {
+					// 	font-size: 36px;
+					// }
+				}
+
+				span {
+					font-size: 30px;
+					
+					@include mappy-bp(screen-lg) {
+						font-size: 50px;
+					}
+				}
+
+				b {
+					font-size: 75px;
+
+					@include mappy-bp(screen-lg) {
+						font-size: 110px;
+					}
+				}
+
+				// @include mappy-bp(screen-lg) {
+				// 	font-size: 73px;
+				// }
+			}
+		}
+
 	}
+
+	#introduction {
+		padding: calc(8em + 40px) 5% 6em;
+
+		.title {
+			margin: 0 0 0.25em;
+
+			@include mappy-bp(screen-md) {
+				text-align: right;	
+				margin: 0 50px 0 0;
+				font-size: 830%;
+			}
+
+			span {
+				@include mappy-bp(screen-sm) {
+					display: inline;	
+				}
+
+				@include mappy-bp(screen-md) {
+					display: block;
+				}
+			}
+		}
+
+		.inner {
+			@include mappy-bp(screen-md) {
+				width: 80%;
+				max-width: 900px;
+				margin: 0 auto;
+				display: flex;
+				align-items: flex-start;	
+			}
+		}
+	}
+
+	#sponsors {
+		background-color: $c-background_colored;
+		display: flex;
+		flex-direction: column;
+		padding: 6em 0 0;
+		position: relative;
+
+		@include mappy-bp(screen-sm) {
+			flex-direction: row-reverse;	
+			padding: 0;
+		}
+
+		figure {
+			margin: 6em 0 0;
+
+			@include mappy-bp(screen-sm) {
+				width: 40%;	
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				margin: 0;
+			}
+
+			@include mappy-bp(screen-md) {
+				width: 60%;	
+			}
+
+			img {
+				display: block;
+				width: 100%;
+				height: auto;
+
+				@include mappy-bp(screen-sm) {
+					height: 100%;	
+					object-fit: cover;
+					object-position: bottom right;
+				}
+			}
+		}
+
+		.content {
+			padding: 0 5%;
+			
+			@include mappy-bp(screen-sm) {
+				width: 60%;	
+				margin: 4em 10% 8em 30%;
+			}
+
+			@include mappy-bp(screen-md) {
+				width: 50%;
+				margin: 4em 5% 8em 50%;	
+			}
+
+			@include mappy-bp(screen-lg) {
+				margin: 6em 10% 10em 50%;	
+			}
+		}
+	}
+
+	#supporters {
+		padding: 6em 0;
+
+		.inner {
+			@include container();
+
+			@include mappy-bp(screen-sm) {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;	
+				flex-wrap: wrap;
+			}
+		}
+
+		figure {
+			margin: 4em 0 0;
+
+			@include mappy-bp(screen-sm) {
+				width: 40%;	
+			}
+
+			img {
+				display: block;
+				width: 100%;
+			}
+		}
+
+		.content {
+			@include mappy-bp(screen-sm) {
+				width: 50%;	
+			}
+
+			@include mappy-bp(screen-md) {
+				width: 40%;	
+			}
+		}
+	}
+
+	#participer {
+		background: url('img/background-dark.jpg') top center no-repeat;
+		background-size: cover;
+		padding: 6em 0;
+		color: white;
+		text-align: center;
+
+		h2 {
+			color: white;
+		}
+
+		.inner {
+			@include container();
+		}
+
+		ul {
+			@include reset-list();
+		}
+
+		.type-selector {
+			width: 80%;
+			max-width: 320px;
+			margin: 2em auto;
+
+			li {
+				margin: 1em 0;
+			}
+
+			button {
+				display: block;
+				width: 100%;
+				font-size: 110%;
+			}
+		}
+
+		.all-slides {
+			// .owl-item slide { height: 0; }    
+			// .owl-item.active slide { height: auto;}
+		}
+
+		.slide {
+			position: relative;
+			//width: 100%;
+			//height: 100vh;
+			//overflow: hidden;
+		}
+
+		#slide-choice {
+			& > div {
+				display: none;
+			}
+		}
+	}
+
+	#exit {
+		img {
+			display: block;
+			width: 100%;
+			height: auto;
+		}
+	}
+
 
 }

@@ -1,10 +1,11 @@
 @mixin btn() {
 	display: inline-block;
-	font-weight: 400;
-	font-size: 0.9em;
+	font-weight: 700;
+	text-transform: uppercase;
 	background-color: $c-link;
 	color: white;
 	border: none;
+	border-radius: 3px;
 	padding: 0.5em 1em;
 	text-decoration: none;
 	transition: all 200ms ease-in-out;
@@ -23,7 +24,7 @@
 
 @mixin container() {
 	width: 90%;
-	max-width: 1800px;
+	max-width: 1150px;
 	margin: 0 auto;
 }
 

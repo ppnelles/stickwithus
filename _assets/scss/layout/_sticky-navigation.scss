@@ -3,7 +3,7 @@
 	top: 0;
 	left: 0;
 	width: 100%;
-	z-index: 100;
+	z-index: 200;
 
 	.admin-bar & {
 		//top: 46px;
@@ -20,7 +20,7 @@ body {
 	&.sticky-menu {
 		
 		#masthead {
-			background-color: rgba($masthead-bgcolor, 0.85);
+			background-color: rgba($blue, 0.95);
 			box-shadow: -1px 10px 20px 0 rgba(0,0,0,.25);
 
 			.site-title {
@@ -45,7 +45,7 @@ body {
 		}
 
 		.nav-inner {
-			max-height: calc(100vh - #{$masthead-height});
+			//max-height: calc(100vh - #{$masthead-height});
 			overflow: auto;
 		}
 	}

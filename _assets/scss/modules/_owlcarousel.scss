@@ -22,6 +22,10 @@
   }
 }
 
+.owl-nav.disabled {
+  display: none;
+}
+
 .owl-dot {
   width: $owl-dot-size;
   height: $owl-dot-size;

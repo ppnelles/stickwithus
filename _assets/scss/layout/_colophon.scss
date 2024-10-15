@@ -10,7 +10,7 @@
 	}
 
 	.site-info {
-		@include container();
+		padding: 0 5%;
 		
 		@include mappy-bp(screen-sm) {
 			display: flex;

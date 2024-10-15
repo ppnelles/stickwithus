@@ -16,7 +16,7 @@
 
 html {
   font-family: sans-serif;
-  line-height: 1.5;
+  line-height: 1.2;
   -moz-text-size-adjust: none;
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
@@ -27,7 +27,7 @@ body {
   margin: 0;
   font-family: $f-regular;
   font-weight: 400;
-  font-size: calc((16px) + .25vw);
+  font-size: calc((12px) + .25vw);
   color: $c-text;
   -webkit-font-smoothing: antialiased;
   background-color: $c-background_body;
