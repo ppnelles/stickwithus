@@ -81,6 +81,9 @@ get_header();
 				<div class="slide" id="slide-choice">
 					<div class="slide-sponsor-choice">
 						<h2><span>Je choisis</span> <span>mon engagement :</span></h2>
+						<div class="choice-intro">
+							Tous les prix s’entendent HTVA par an et pour minimum 3 ans.<br>Réalisation et production du support à charge du club, sauf mention contraire.
+						</div>
 
 						<ul class="sponsor-choice">
 							<li>
@@ -138,7 +141,7 @@ get_header();
 									<div class="picto"></div>
 									<div class="choice-title"><span>Équipements divers pour</span> <span>une équipe du club<sup>*</sup></span></div>
 									<div class="choice-price">à partir de 500 €</div>
-									<div class="choice-description">Équipements divers pour une équipe du club, de marque Reece et via Ikiba<sup>*</sup> : fee de 500 € au club + achat & marquage des textiles à charge du sponsor.</div>
+									<div class="choice-description">Équipements divers pour une équipe du club, de marque Reece via Ikiba<sup>*</sup> : fee de 500 € au club + achat & marquage des textiles à charge du sponsor.</div>
 								</button>
 							</li>
 							<li>
@@ -150,13 +153,15 @@ get_header();
 								</button>
 							</li>
 						</ul>
-						<div class="disclaimer"><sup>*</sup> Ces deux dernières formules ne sont accessibles qu’aux sponsors qui participent déjà à une des formules précédentes, et sous réserve de non-concurrence avec l’un des « grands sponsors » du club.</div>
+						<div class="disclaimer"><span><sup>*</sup> Ces deux dernières formules ne sont accessibles qu’aux sponsors qui participent déjà à une des formules précédentes,</span> <span>et sous réserve de non-concurrence avec l’un des « grands sponsors » du club.</span></div>
 						<div class="cta">
 							<div class="slide-prev">⇽ Retour</div>
 						</div>
 					</div>
 					<div class="slide-supporter-choice">
 						<h2><span>Je choisis</span> <span>mon engagement :</span></h2>
+						<div class="choice-intro">
+							Contribution financière en one-shot.<br>Non soumis à la TVA.</div>
 
 						<ul class="supporter-choice">
 							<li>

@@ -514,6 +514,14 @@
 			}
 		}
 
+		.disclaimer {
+			span {
+				@include mappy-bp(screen-md) {
+					display: block;	
+				}
+			}
+		}
+
 	}
 
 	#exit {
