@@ -60,18 +60,28 @@ jQuery('.slide-next').click(function() {
 
 		if(requestedType != "undefined") {
 			jQuery('input.contact-type').attr('value', requestedType);
+			jQuery('#selected-type-label').text(requestedType);
 		}
 		if(requestedFormula != "undefined") {
 			jQuery('input.selected-formula').attr('value', requestedFormula);
+			jQuery('#selected-formula-label').text(requestedFormula);
 		}
 
-		if(requestedType == 'sponsor') {
+		if(requestedType == 'Sponsor') {
 			jQuery('.slide-sponsor-choice').css('display', 'block');
 			jQuery('.slide-supporter-choice').css('display', 'none');
+
+			jQuery('.if-company').each(function(index, el) {
+				jQuery(this).css('display', 'block');			
+			});
 		}
-		else if(requestedType == 'supporter') {
+		else if(requestedType == 'Supporter') {
 			jQuery('.slide-sponsor-choice').css('display', 'none');
 			jQuery('.slide-supporter-choice').css('display', 'block');
+
+			jQuery('.if-company').each(function(index, el) {
+				jQuery(this).css('display', 'none');			
+			});
 		}
 
 		goToSlide('next'); 
@@ -144,6 +154,15 @@ jQuery(document).ready(function ($) {
 	//   jQuery('#popup').addClass('hidden');
 	// });
 
+	jQuery(".form-btn").click(function() {
+	    event.preventDefault();
+
+	    jQuery([document.documentElement, document.body]).animate({
+	        scrollTop: jQuery("#participer").offset().top
+	    }, 500).delay(200);
+
+	 });
+
 	jQuery(".menu-anchor a").click(function() {
 	    event.preventDefault();
 	    var menuItem = jQuery(this).attr('href');
@@ -169,5 +188,81 @@ jQuery(document).ready(function ($) {
 	        scrollTop: jQuery(menuItem).offset().top
 	    }, 250);
 	 });
+
+  jQuery('#add-entry-form').submit(function(ev) {
+    ev.preventDefault();
+
+    jQuery('.the-form .wait').css('visibility','visible');
+    jQuery('#slide-form .slide-prev').css('visibility','hidden');
+    jQuery('#slide-form .form-submit').css('visibility','hidden');
+
+    const ajaxurl = jQuery(this).attr('action');
+    const data = {
+      action: jQuery(this).find('input[name=action]').val(), 
+      nonce: my_ajax_obj.nonce,
+      firstname: jQuery(this).find('input[name=firstname]').val(),
+      lastname: jQuery(this).find('input[name=lastname]').val(),
+      email: jQuery(this).find('input[name=email]').val(),
+      phone: jQuery(this).find('input[name=phone]').val(),
+      contact_type: jQuery(this).find('input[name=contact_type]').val(),
+      selected_formula: jQuery(this).find('input[name=selected_formula]').val(),
+      company_name: jQuery(this).find('input[name=company_name]').val(),
+      company_activity: jQuery(this).find('input[name=company_activity]').val(),
+    }
+
+    //console.log(data);
+
+    fetch(ajaxurl, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'Cache-Control': 'no-cache',
+        },
+        body: new URLSearchParams(data),
+    })
+    .then(response => response.json())
+    .then(response => {
+
+        if (!response.success) {
+            alert("An error occured. Please, try again.");
+            return;
+        }
+        else {
+
+          if(response.data.validate == true) {
+
+            jQuery('input.form-field').each(function() {
+              jQuery(this).val('');
+            });
+
+            jQuery('.the-form .wait').css('visibility','hidden');
+            jQuery('#form-saved').addClass('active');
+            jQuery('#add-entry-form').css('display','none');
+
+            // jQuery([document.documentElement, document.body]).animate({
+            //     scrollTop: jQuery('#form-saved').offset().top
+            // }, 0).delay(0);
+          }
+        	else if(response.data.emailexist == true) {
+        		//console.log('dfsfds');
+        		jQuery('#add-entry-form .email').addClass('errored');
+        		jQuery('#add-entry-form .email .error-message').addClass('active');
+						jQuery('.the-form .wait').css('visibility','visible');
+						jQuery('#slide-form .form-submit').css('visibility','visible');
+            jQuery('#slide-form .slide-prev').css('visibility','visible');
+
+
+
+						jQuery([document.documentElement, document.body]).animate({
+					        scrollTop: jQuery('#participer .email').offset().top
+					    }, 300).delay(0);
+        	}
+
+        	setOwlStageHeight();
+
+        }
+    })
+
+  });
 
 })
