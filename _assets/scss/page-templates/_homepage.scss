@@ -373,11 +373,11 @@
 				border-radius: 3px;
 
 				@include mappy-bp(screen-sm) {
-					min-height: 370px;
+					min-height: 300px;
 				}
 
 				@include mappy-bp(screen-md) {
-					min-height: 330px;
+					min-height: 250px;
 				}
 
 				.picto {
@@ -387,6 +387,8 @@
 					border-radius: 100px;
 					background-color: #fff;
 					margin: 0 auto;
+
+					display: none;
 				}
 
 				.choice-title,
@@ -401,6 +403,7 @@
 					text-transform: uppercase;
 					font-weight: 700;
 					font-size: 130%;
+					margin: 0;
 
 					span {
 						@include mappy-bp(screen-md) {
