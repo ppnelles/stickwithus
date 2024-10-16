@@ -165,7 +165,7 @@ function add_ajax_entry_form() {
               $content = ob_get_contents();
               ob_end_clean();
 
-              $email_sent = wp_mail( "paul-philippe@getin.agency", $title, $content, $headers);
+              $email_sent = wp_mail( "jean-luc.nondonfaz@wallonie-entreprendre.be", $title, $content, $headers);
               $succes['validate'] = true;
               wp_send_json_success( $succes );
             }
