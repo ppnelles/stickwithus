@@ -85,7 +85,7 @@ jQuery('.slide-next').click(function() {
 				jQuery('#selected-formula-label').text(selectedFormulas);
 
 				jQuery('#participer .error-msg').each(function(index, el) {
-					jQuery('.error-msg').css('visibility','hidden');
+					jQuery(this).css('visibility','hidden');
 				});
 			}
 			
@@ -113,6 +113,11 @@ jQuery('.slide-next').click(function() {
 
 jQuery('.slide-prev').click(function() {
 	goToSlide('previous');
+
+	jQuery('#participer .error-msg').each(function(index, el) {
+		jQuery(this).css('visibility','hidden');
+	});
+
 });
 
 
