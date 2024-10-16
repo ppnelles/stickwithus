@@ -2,7 +2,7 @@
  * Enqueue scripts and styles.
  */
 function _turbo_scripts() {
-	wp_enqueue_style( '_turbo-style', get_stylesheet_uri(), array(), '20241016-2', 'all' );
+	wp_enqueue_style( '_turbo-style', get_stylesheet_uri(), array(), '20241016-3', 'all' );
 
 	//wp_enqueue_script( '_turbo-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
