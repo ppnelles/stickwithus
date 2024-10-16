@@ -152,7 +152,7 @@ function add_ajax_entry_form() {
                   <b>Email: </b> <?php echo sanitize_text_field($_REQUEST['email']); ?><br>
                   <b>GSM: </b> <?php echo sanitize_text_field($_REQUEST['phone']); ?><br>
                   <b>Partenariat: </b> <?php echo sanitize_text_field($_REQUEST['contact_type']); ?><br>
-                  <b>Formule choisie: </b> <?php echo sanitize_text_field($_REQUEST['selected_formula']); ?>
+                  <b>Formule(s) choisie(s): </b> <?php echo sanitize_text_field($_REQUEST['selected_formula']); ?>
                   <?php if($_REQUEST['selected_formula'] == "Sponsor"): ?>
                     <br><b>Nom du sponsor: </b> <?php echo sanitize_text_field($_REQUEST['company_name']); ?>
                     <br><b>Secteur d'activités: </b> <?php echo sanitize_text_field($_REQUEST['company_activity']); ?>

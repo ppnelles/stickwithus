@@ -54,17 +54,41 @@ function checkIfInView(){
 
 jQuery('.slide-next').click(function() {
 		var requestedType = jQuery(this).attr('data-type');
-		var requestedFormula = jQuery(this).attr('data-formula');
+		//var requestedFormula = jQuery(this).attr('data-formula');
 
-		console.log(requestedType, requestedFormula);
+		//console.log(requestedType, requestedFormula);
 
 		if(requestedType != "undefined") {
 			jQuery('input.contact-type').attr('value', requestedType);
 			jQuery('#selected-type-label').text(requestedType);
 		}
-		if(requestedFormula != "undefined") {
-			jQuery('input.selected-formula').attr('value', requestedFormula);
-			jQuery('#selected-formula-label').text(requestedFormula);
+		// if(requestedFormula != "undefined") {
+		// 	jQuery('input.selected-formula').attr('value', requestedFormula);
+		// 	jQuery('#selected-formula-label').text(requestedFormula);
+		// }
+
+		if(jQuery(this).hasClass('valid-formula')) {
+			var checkedVals = jQuery('input[name="formulas"]:checked').map(function() {
+		    return this.value;
+			}).get();
+
+			if(checkedVals.length == 0) {
+				jQuery('#participer .error-msg').each(function(index, el) {
+					jQuery('.error-msg').css('visibility','visible');
+				});
+
+				return;
+			}
+			else {
+				var selectedFormulas = checkedVals.join(", ");
+				jQuery('input.selected-formula').attr('value', selectedFormulas);
+				jQuery('#selected-formula-label').text(selectedFormulas);
+
+				jQuery('#participer .error-msg').each(function(index, el) {
+					jQuery('.error-msg').css('visibility','hidden');
+				});
+			}
+			
 		}
 
 		if(requestedType == 'Sponsor') {

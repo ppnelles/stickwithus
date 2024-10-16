@@ -346,6 +346,7 @@
 			li {
 				margin: 0 auto 2em;
 				width: 98%;
+				position: relative;
 
 				@include mappy-bp(screen-sm) {
 					width: 33.3333333%;	
@@ -353,7 +354,14 @@
 				}
 			}
 
-			button {
+			input[type="checkbox"] {
+				position: absolute;
+				top: 0;
+				left: 0;
+				visibility: hidden;
+			}
+
+			label {
 				display: flex;
 				flex-direction: column;
 				align-items: center;
@@ -370,10 +378,6 @@
 
 				@include mappy-bp(screen-md) {
 					min-height: 330px;
-				}
-
-				&:hover {
-					background-color: $blue-light;
 				}
 
 				.picto {
@@ -405,7 +409,6 @@
 					}
 				}
 
-
 				.choice-price {
 					font-size: 130%;
 				}
@@ -413,8 +416,32 @@
 				.choice-description {
 					font-style: italic;
 				}
+
+				&:hover {
+					border-color: $blue-light;
+
+					// .picto {
+					// 	background-color: $blue;
+					// }
+
+					// .choice-title,
+					// .choice-price,
+					// .choice-description {
+					// 	color: $blue;
+					// }
+				}
 			}
 
+			input[type="checkbox"]:checked + label {
+				background-color: $blue-light;
+				border-color: $blue-light;
+			}
+
+		}
+
+		button.valid-formula {
+			font-size: 130%;
+			margin: 0 0 1em;
 		}
 
 		.all-slides {
@@ -483,6 +510,20 @@
 	    	}
 		}
 
+		.error-msg,
+		.wait {
+			padding: 0.5em 1em;
+		    border: 1px solid white;
+		    border-radius: 3px;
+			visibility: hidden;
+		}
+
+		.error-msg {
+			margin: 1em 0;
+			color: $red;
+			border-color: $red;
+		}
+
 		form {
 			width: 100%;
 			max-width: 700px;
@@ -494,13 +535,6 @@
 					text-align: left;
 					text-transform: uppercase;
 				}
-			}
-
-			.wait {
-				padding: 0.5em 1em;
-			    border: 1px solid white;
-			    border-radius: 3px;
-				visibility: hidden;
 			}
 
 			.form-submit {

@@ -87,75 +87,88 @@ get_header();
 
 						<ul class="sponsor-choice">
 							<li>
-								<button class="slide-next" data-formula="2 bâches sur les longs côtés des 2 terrains">
+								<input type="checkbox" id="formula-bache1" name="formulas" value="2 bâches sur les longs côtés des 2 terrains">
+								<label for="formula-bache1">
 									<div class="picto"></div>
 									<div class="choice-title"><span>2 bâches sur</span> <span>les longs côtés des</span> <span>2 terrains</span></div>
 									<div class="choice-price">2.500 €</div>
 									<div class="choice-description">Taille standard 250 x 90 / Couleur uniforme / Design & production via EHC</div>
-								</button>
+								</label>
 							</li>
 							<li>
-								<button class="slide-next" data-formula="2 bâches sur le nouveau terrain">
+								<input type="checkbox" id="formula-bache2" name="formulas" value="2 bâches sur le nouveau terrain">
+								<label for="formula-bache2">
 									<div class="picto"></div>
 									<div class="choice-title"><span>2 bâches sur</span> <span>le nouveau terrain</span></div>
 									<div class="choice-price">1.750 €</div>
-								</button>
+								</label>
 							</li>
 							<li>
-								<button class="slide-next" data-formula="2 bâches sur l’ancien terrain">
+								<input type="checkbox" id="formula-bache3" name="formulas" value="2 bâches sur l’ancien terrain">
+								<label for="formula-bache3">
 									<div class="picto"></div>
 									<div class="choice-title"><span>2 bâches sur</span> <span>l’ancien terrain</span></div>
 									<div class="choice-price">1.250 €</div>
-								</button>
+								</label>
 							</li>
 							<li>
-								<button class="slide-next" data-formula="1 grande bâche derrière le goal">
+								<input type="checkbox" id="formula-bache4" name="formulas" value="1 grande bâche derrière le goal">
+								<label for="formula-bache4">
 									<div class="picto"></div>
 									<div class="choice-title"><span>1 grande bâche</span> <span>derrière le goal</span></div>
 									<div class="choice-price">2.500 €</div>
-								</button>
+								</label>
 							</li>
 							<li>
-								<button class="slide-next" data-formula="Mousses de protection dans les goals">
+								<input type="checkbox" id="formula-mousses" name="formulas" value="Mousses de protection dans les goals">
+								<label for="formula-mousses">
 									<div class="picto"></div>
 									<div class="choice-title"><span>Mousses de protection</span> <span>dans les goals (6)</span></div>
 									<div class="choice-price">2.000 €</div>
-								</button>
+								</label>
 							</li>
 							<li>
-								<button class="slide-next" data-formula="Jetons boissons">
+								<input type="checkbox" id="formula-jetons" name="formulas" value="Jetons boissons">
+								<label for="formula-jetons">
 									<div class="picto"></div>
 									<div class="choice-title"><span>Jetons</span> <span>boissons</span></div>
 									<div class="choice-price">2.000 €</div>
-								</button>
+								</label>
 							</li>
 							<li>
-								<button class="slide-next" data-formula="Gobelets">
+								<input type="checkbox" id="formula-gobelets" name="formulas" value="Gobelets">
+								<label for="formula-gobelets">
 									<div class="picto"></div>
 									<div class="choice-title"><span>Un pack de</span> <span>Gobelets</span></div>
 									<div class="choice-price">2.000 €</div>
-								</button>
+								</label>
 							</li>
 							<li>
-								<button class="slide-next" data-formula="Équipements divers pour une équipe">
+								<input type="checkbox" id="formula-equipements" name="formulas" value="Équipements divers pour une équipe">
+								<label for="formula-equipements">
 									<div class="picto"></div>
 									<div class="choice-title"><span>Équipements divers pour</span> <span>une équipe du club<sup>*</sup></span></div>
 									<div class="choice-price">à partir de 500 €</div>
 									<div class="choice-description">Équipements divers pour une équipe du club, de marque Reece via Ikiba<sup>*</sup> : fee de 500 € au club + achat & marquage des textiles à charge du sponsor.</div>
-								</button>
+								</label>
 							</li>
 							<li>
-								<button class="slide-next" data-formula="Équipements divers pour une équipe">
+								<input type="checkbox" id="formula-100-balles" name="formulas" value="100 balles de hockey à personnaliser">
+								<label for="formula-100-balles">
 									<div class="picto"></div>
 									<div class="choice-title"><span>100 balles de hockey</span> <span>à personnaliser<sup>*</sup></span></div>
 									<div class="choice-price">à partir de 250 €</div>
 									<div class="choice-description">-	100 balles de hockey, à commander et personnaliser via Ikiba<sup>*</sup> : fee de 250 € au club + achat & marquage des balles à charge du sponsor</div>
-								</button>
+								</label>
 							</li>
 						</ul>
 						<div class="disclaimer"><span><sup>*</sup> Ces deux dernières formules ne sont accessibles qu’aux sponsors qui participent déjà à une des formules précédentes,</span> <span>et sous réserve de non-concurrence avec l’un des « grands sponsors » du club.</span></div>
 						<div class="cta">
+							<div>
+								<button class="slide-next valid-formula">Suivant</button>
+							</div>
 							<div class="slide-prev">⇽ Retour</div>
+							<div class="error-msg">Vous devez sélectionner au moins une option.</div>
 						</div>
 					</div>
 					<div class="slide-supporter-choice">
@@ -165,31 +178,38 @@ get_header();
 
 						<ul class="supporter-choice">
 							<li>
-								<button class="slide-next" data-formula="Un arbre">
+								<input type="checkbox" id="formula-arbre" name="formulas" value="Un arbre">
+								<label for="formula-arbre">
 									<div class="picto"></div>
 									<div class="choice-title"><span>Un arbre</span></div>
 									<div class="choice-price">1.000 €</div>
 									<div class="choice-description">Chaque arbre sera planté aux abords du club et constituera le témoignage à long terme de votre engagement dans le projet du Embourg Hockey Club.</div>
-								</button>
+								</label>
 							</li>
 							<li>
-								<button class="slide-next" data-formula="Une balle personnalisée">
+								<input type="checkbox" id="formula-balleperso" name="formulas" value="Une balle personnalisée">
+								<label for="formula-balleperso">
 									<div class="picto"></div>
 									<div class="choice-title"><span>Une balle de hockey</span> <span>à personnaliser</span></div>
 									<div class="choice-price">250 €</div>
 									<div class="choice-description">Chaque balle pourra être décorée par son / ses acheteurs.euses et elles seront toutes exposées à long terme au sein du nouveau Club House.</div>
-								</button>
+								</label>
 							</li>
 							<li>
-								<button class="slide-next" data-formula="Autre formule">
+								<input type="checkbox" id="formula-autre" name="formulas" value="Autre formule">
+								<label for="formula-autre">
 									<div class="picto"></div>
 									<div class="choice-title"><span>Autres formules</span> <span>& options sur-mesure</span></div>
 									<div class="choice-description">Vous pensez à une autre façon de devenir Supporter et vous souhaitez nous la partager. N’hésitez bien entendu pas à vous faire connaître.</div>
-								</button>
+								</label>
 							</li>
 						</ul>
 						<div class="cta">
+							<div>
+								<button class="slide-next valid-formula">Suivant</button>
+							</div>
 							<div class="slide-prev">⇽ Retour</div>
+							<div class="error-msg">Vous devez sélectionner au moins une option.</div>
 						</div>
 						
 					</div>
@@ -212,8 +232,8 @@ get_header();
 					            <input type="hidden" class="contact-type" name="contact_type" value="">
 								<input type="hidden" class="selected-formula" name="selected_formula" value="">
 								<div class="your-selection">
-									<label>Votre sélection :</label>
-									<div class="selection"><span id="selected-type-label"></span> / <span id="selected-formula-label"></span></div>
+									<label>Vos sélections :</label>
+									<div class="selection"><span id="selected-type-label"></span> <br> <span id="selected-formula-label"></span></div>
 								</div>
 					            <div class="required">
 					                <label class="field-label" for="firstname">Prénom<sup>*</sup> :</label>
